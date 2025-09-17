@@ -1,0 +1,128 @@
+---
+// Props para la sección Sobre Mí
+interface Props {
+  title?: string;
+}
+
+const { title = "Sobre Mí" } = Astro.props;
+---
+
+<section id="sobre-mi" class="section about-section">
+  <div class="container">
+    <h2 class="section-title">{title}</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <div class="placeholder-image"></div>
+      </div>
+      <div class="about-text">
+        <p>
+          Soy un desarrollador web apasionado por crear soluciones digitales con un enfoque en la experiencia de usuario.
+          Mi viaje en el desarrollo comenzó hace 4 años, y desde entonces he trabajado en diversos proyectos que me han permitido
+          perfeccionar mis habilidades técnicas y creativas.
+        </p>
+        <p>
+          Me especializo en desarrollo frontend con tecnologías modernas como React, Vue, y Astro, aunque también tengo experiencia
+          en el backend con Node.js y bases de datos. Me encanta aprender nuevas tecnologías y estar al día con las últimas tendencias
+          del desarrollo web.
+        </p>
+        <p>
+          Cuando no estoy programando, disfruto de los videojuegos y la lectura. Creo firmemente en el aprendizaje continuo
+          y en compartir conocimientos con la comunidad.
+        </p>
+        <div class="about-details">
+          <div class="detail">
+            <h3>Educación</h3>
+            <p>Título en Ingeniería de Sistemas</p>
+          </div>
+          <div class="detail">
+            <h3>Experiencia</h3>
+            <p>4 años de experiencia en desarrollo web</p>
+          </div>
+          <div class="detail">
+            <h3>Ubicación</h3>
+            <p>Perú - Huánuco</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background-color: var(--color-background);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+  }
+
+  .about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .placeholder-image {
+    width: 350px;
+    height: 350px;
+    background-color: var(--color-background-alt);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-text {
+    flex: 1.5;
+  }
+
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .about-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .detail h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-details {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

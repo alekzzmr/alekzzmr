@@ -1,16 +1,10 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Alekzzmr</title>
-	</head>
-	<body>
-		<h1>Hola, soy Alex</h1>
-	</body>
-</html>
+<MainLayout title="Alex - Portafolio de Desarrollo Web" description="Portafolio profesional de Alex, desarrollador web especializado en crear experiencias digitales modernas y atractivas">
+  <Hero />
+  <About />
+</MainLayout>
